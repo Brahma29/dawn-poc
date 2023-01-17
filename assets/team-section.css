@@ -1,0 +1,122 @@
+.team-card {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    width: 32%;
+    min-width: 14rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 auto;
+    -ms-flex: 0 auto;
+    flex: 0 auto;
+    grid-row-gap: 1.5rem;
+}
+
+.team-card-img {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    border-radius: 5px;
+}
+
+.team-card-text {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    grid-row-gap: 0.75rem;
+}
+
+.team-member-name {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: var(--color-21d48a46);
+    font-size: 1.6rem;
+    line-height: 38px;
+    font-weight: 500;
+}
+
+.team-member-post {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: var(--color-n573f0abe);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.team-member-msg {
+    display: none;
+    color: var(--color-n3c5faed);
+    font-size: 1rem;
+    line-height: 25px;
+}
+
+.team-member-name {
+    font-size: 1.8rem;
+}
+
+.team-member-post {
+    font-size: 1.2rem;
+}
+
+.team-member-msg {
+    font-size: 1.1rem;
+}
+
+@media screen and (min-width: 1920px) {
+
+    .team-card {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 auto;
+        -ms-flex: 0 auto;
+        flex: 0 auto;
+    }
+
+
+}
+
+
+@media screen and (max-width: 991px) {
+
+    .team-card {
+        width: 31%;
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+    }
+
+    .team-card-text {
+        grid-row-gap: 0.25rem;
+    }
+
+    .team-member-name {
+        font-size: 1.4rem;
+    }
+
+    .team-member-post {
+        font-size: 0.9rem;
+    }
+
+    .team-member-msg {
+        font-size: 0.9rem;
+    }
+
+
+}
