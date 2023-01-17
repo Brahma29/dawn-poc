@@ -25,6 +25,12 @@
   background-image: none;
 }
 
+.section.bg-transparent.px-24 {
+  padding-right: 6.4rem;
+  padding-left: 6.4rem;
+  grid-row-gap: 4.75rem;
+}
+
 .cards {
   position: static;
   z-index: 10;
