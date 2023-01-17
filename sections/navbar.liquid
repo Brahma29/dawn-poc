@@ -1,0 +1,371 @@
+<a
+  href="{% if section.settings.logo %}{{ section.settings.logo }}{% else %}{{ routes.root_url }}{% endif %}"
+  aria-current="page"
+  class="brand w-inline-block w--current"
+>
+  {%- if section.settings.lottie_animation_3_visibility -%}
+    <div
+      class="lottie-animation-3"
+      data-w-id="5ef5fb41-5f13-6f70-f986-5afa9665d8cd"
+      data-animation-type="lottie"
+      data-src="{{ 'chetnalighterbg-01.json' | asset_url }}"
+      data-loop="1"
+      data-direction="1"
+      data-autoplay="1"
+      data-is-ix2-target="0"
+      data-renderer="svg"
+      data-default-duration="1.9686352217844805"
+      data-duration="4"
+    ></div>
+  {%- endif -%}
+</a>
+<div class="nav-menu">
+  <div class="flex">
+    <a
+      href="/collections/all"
+      class="shop-link-bg w-inline-block"
+    >
+      <div id="ShopLink" class="shop">{{ section.settings.shop_text }}</div>
+      <div id="shop-btn-border" class="div-block-38"></div>
+    </a>
+    <a href="/collections/all" class="shopactivedot w-inline-block"></a>
+  </div>
+  <div class="flex">
+    <a
+      href="{% if section.settings.menu_item_link %}{{ section.settings.menu_item_link }}{% else %}{{ pages["about"].url }}{% endif %}"
+      class="menu-item w-inline-block"
+    >
+      <div>{{ section.settings.text_block_text_2 }}</div>
+    </a>
+    <a href="{{ pages["about"].url }}" class="active-dot w-inline-block"></a>
+  </div>
+  <div class="flex">
+    <a
+      href="{% if section.settings.menu_item_link_2 %}{{ section.settings.menu_item_link_2 }}{% else %}{{ pages["materials"].url }}{% endif %}"
+      class="menu-item w-inline-block"
+    >
+      <div>{{ section.settings.nav_link_3 }}</div>
+    </a>
+    <a href="{{ pages["materials"].url }}" class="active-dot w-inline-block"></a>
+  </div>
+  <div data-w-id="dffda831-15d8-dafd-7e52-e8064fccac94" class="dropdown">
+    <a
+      id="Resource-Link"
+      data-w-id="e8f609a8-e828-8371-cf89-37cc8f6b6663"
+      href="{% if section.settings.menu_item_link_3 %}{{ section.settings.menu_item_link_3 }}{% else %}{{ pages["resources"].url }}{% endif %}"
+      class="menu-item dropdown w-inline-block"
+    >
+      <div>{{ section.settings.text_block_text }}</div>
+      <div class="icon-2 w-icon-dropdown-toggle"></div>
+    </a>
+    <div class="dropdown-list">
+      <a
+        href="{% if section.settings.droplink_link_2 %}{{ section.settings.droplink_link_2 }}{% else %}{{ pages["sustainability"].url }}{% endif %}"
+        class="droplink w-inline-block"
+      >
+        <div>{{ 'tn1baefe39' | t }}</div>
+      </a>
+      <a
+        href="{% if section.settings.droplink_link_3 %}{{ section.settings.droplink_link_3 }}{% else %}{{ pages["our-brands"].url }}{% endif %}"
+        class="droplink w-inline-block"
+      >
+        <div>{{ 't7c121960' | t }}</div>
+      </a>
+      <a
+        href="{% if section.settings.droplink_link_4 %}{{ section.settings.droplink_link_4 }}{% else %}{{ pages["compliance"].url }}{% endif %}"
+        class="droplink w-inline-block"
+      >
+        <div>{{ 't56bf8c3b' | t }}</div>
+      </a>
+      <a
+        href="{% if section.settings.droplink_link_5 %}{{ section.settings.droplink_link_5 }}{% else %}{{ pages["faqs"].url }}{% endif %}"
+        class="droplink w-inline-block"
+      >
+        <div>{{ 't20d03d' | t }}</div>
+      </a>
+      <a
+        href="{% if section.settings.droplink_link_6 %}{{ section.settings.droplink_link_6 }}{% else %}{{ pages["blogs"].url }}{% endif %}"
+        class="droplink w-inline-block"
+      >
+        <div>{{ 't3d4d4f1' | t }}</div>
+      </a>
+      <a
+        href="{% if section.settings.droplink_link %}{{ section.settings.droplink_link }}{% else %}{{ pages["downloads"].url }}{% endif %}"
+        class="droplink w-inline-block"
+      >
+        <div>{{ 'tn3a4f9735' | t }}</div>
+      </a>
+      <a
+        href="{% if section.settings.droplink_link_7 %}{{ section.settings.droplink_link_7 }}{% else %}{{ pages["terms-and-conditions"].url }}{% endif %}"
+        class="droplink w-inline-block"
+      >
+        <div>{{ 'tn7fe2d65b' | t }}</div>
+      </a>
+    </div>
+  </div>
+  <div
+    data-node-type="commerce-cart-wrapper"
+    data-open-product=""
+    data-wf-cart-type="modal"
+    data-wf-cart-query=""
+    data-wf-page-link-href-prefix=""
+    class="w-commerce-commercecartwrapper"
+    udy-collection="cart"
+  >
+    <a
+      href="#"
+      data-node-type="commerce-cart-open-link"
+      aria-haspopup="dialog"
+      aria-label="Open cart"
+      role="button"
+      class="w-commerce-commercecartopenlink btn btn-bg-coco cart-btn hide w-inline-block"
+    >
+      <svg class="w-commerce-commercecartopenlinkicon" width="17px" height="17px" viewBox="0 0 17 17">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <path d="M2.60592789,2 L0,2 L0,0 L4.39407211,0 L4.84288393,4 L16,4 L16,9.93844589 L3.76940945,12.3694378 L2.60592789,2 Z M15.5,17 C14.6715729,17 14,16.3284271 14,15.5 C14,14.6715729 14.6715729,14 15.5,14 C16.3284271,14 17,14.6715729 17,15.5 C17,16.3284271 16.3284271,17 15.5,17 Z M5.5,17 C4.67157288,17 4,16.3284271 4,15.5 C4,14.6715729 4.67157288,14 5.5,14 C6.32842712,14 7,14.6715729 7,15.5 C7,16.3284271 6.32842712,17 5.5,17 Z" fill="currentColor" fill-rule="nonzero"></path>
+        </g>
+      </svg>
+      <div class="w-inline-block">{{ 't1fef40' | t }}</div>
+      <div class="w-commerce-commercecartopenlinkcount cart-quantity">{{ cart.item_count }}</div>
+    </a>
+    <div
+      data-node-type="commerce-cart-container-wrapper"
+      style="display:none"
+      class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-modal cart-wrapper"
+    >
+      <div
+        role="dialog"
+        data-node-type="commerce-cart-container"
+        class="w-commerce-commercecartcontainer cart-container"
+      >
+        <div class="w-commerce-commercecartheader cart-header">
+          <h4 class="w-commerce-commercecartheading heading-9">{{ 't1fef40' | t }}</h4>
+          <a
+            href="#"
+            data-node-type="commerce-cart-close-link"
+            role="button"
+            aria-label="Close cart"
+            class="w-commerce-commercecartcloselink close-button w-inline-block"
+            ><img src="{{ 'path-327.svg' | asset_url }}" loading="lazy" alt=""
+          ></a>
+        </div>
+        <div class="w-commerce-commercecartformwrapper">
+          <form data-node-type="commerce-cart-form" style="display:none" class="w-commerce-commercecartform">
+            <div class="w-commerce-commercecartfooter cart-footer">
+              <div aria-atomic="true" aria-live="polite" class="w-commerce-commercecartlineitem cart-line-item">
+                <div class="div-block-6">
+                  <div class="text-block-13">{{ 'tn77079b6c' | t }}</div>
+                </div>
+                <div class="div-block-5">
+                  <div class="col cart">
+                    <div class="div-block-7">
+                      <div class="text-block-14">{{ 'tn76f396dc' | t }}</div>
+                      <div class="w-commerce-commercecartordervalue text-block-15">
+                        {{ cart.items_subtotal_price | money }}
+                      </div>
+                    </div>
+                    <div class="div-block-8">
+                      <div class="text-block-16">{{ 't4d3eb24' | t }}</div>
+                      <div class="w-commerce-commercecartordervalue text-block-17">
+                        {{ cart.items_subtotal_price | money }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col cart">
+                    <div>
+                      <a
+                        href="/checkout"
+                        value="Place Order"
+                        data-node-type="cart-checkout-button"
+                        class="w-commerce-commercecartcheckoutbutton btn btn-bg-coco cart"
+                        data-loading-text="Hang Tight..."
+                      >
+                        {{- 'ta750ab5' | t -}}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="div-block-9">
+              <div class="div-block-6">
+                <div class="text-block-13">{{ 'tn685f8ab2' | t }}</div>
+              </div>
+              <script type="text/x-wf-template" id="wf-template-5b596057-aeee-c8b3-29d3-9001975d39d3">
+                      <div data-node-type="cart-item" class="cart-item w-commerce-commercecartitem" template-part-bind="5b596057-aeee-c8b3-29d3-9001975d39d4"><img data-node-type="cart-item-image" class="image-19 w-commerce-commercecartitemimage" template-part-bind="5b596057-aeee-c8b3-29d3-9001975d39d5" src="<%= it.image %>">
+                      <div>
+                      <a data-node-type="link" class="link-block-10" template-part-bind="1691a2ae-6dd9-ed36-b7ad-3753fe3431fa" href="<%= it.url%>"><div data-node-type="cart-item-info" class="div-block-13 w-commerce-commercecartiteminfo" template-part-bind="5b596057-aeee-c8b3-29d3-9001975d39d6"><div data-node-type="cart-product-name" class="text-block-20 w-commerce-commercecartproductname" template-part-bind="5b596057-aeee-c8b3-29d3-9001975d39d7"><%= it.title %></div><ul class="option-list-3 w-commerce-commercecartoptionlist" template-part-bind="5b596057-aeee-c8b3-29d3-9001975d39d9"><% Object.entries(it.properties).forEach( data =>  { %><li data-node-type="cart-option-list-item"><span data-node-type="cart-option-list-item-label" template-part-bind="5b596057-aeee-c8b3-29d3-9001975d39db"><%= data[0] %></span><span>: </span><span data-node-type="cart-option-list-item-value" template-part-bind="5b596057-aeee-c8b3-29d3-9001975d39de"><%= data[1] %></span></li><% }) %></ul></div></a>
+                      <input class="w-commerce-commercecartquantity quantity cart" name="<%= it.id %>" type="number" min="0" min="1" value="<%= it.quantity %>" data-node-type="cart-quantity">
+                    </div>
+                    <div>
+                      <div class="div-block-12"><div class="text-block-19" template-part-bind="5b596057-aeee-c8b3-29d3-9001975d39d8"><%= it.price %></div>
+                    <a data-node-type="cart-remove-link" class="remove-button" href="#" role="button" aria-label="Remove item from cart" template-part-bind="5b596057-aeee-c8b3-29d3-9001975d39df" data-product-id="<%= it.id %>"><div class="text-block-21">Remove</div></a>
+                  </div>
+                    <div class="div-block-14"><div class="div-block-11"><ul data-node-type="list" class="list-2"><li data-node-type="list-item"><div class="text-block-18" >Delivery in 2 days , Sun | Free</div></li></ul></div></div>
+                </div>
+                </div>
+              </script>
+              <div
+                class="w-commerce-commercecartlist cart-list"
+                data-wf-collection="database.commerceOrder.userItems"
+                data-wf-template-id="wf-template-5b596057-aeee-c8b3-29d3-9001975d39d3"
+              ></div>
+            </div>
+          </form>
+          <div class="w-commerce-commercecartemptystate">
+            <div aria-live="polite" aria-label="This cart is empty">{{ 't3d503d2b' | t }}</div>
+          </div>
+          <div
+            aria-live="assertive"
+            style="display:none"
+            data-node-type="commerce-cart-error"
+            class="w-commerce-commercecarterrorstate"
+          >
+            <div
+              class="w-cart-error-msg"
+              data-w-cart-quantity-error="Product is not available in this quantity."
+              data-w-cart-general-error="Something went wrong when adding this item to the cart."
+              data-w-cart-checkout-error="Checkout is disabled on this site."
+              data-w-cart-cart_order_min-error="The order minimum was not met. Add more items to your cart to continue."
+              data-w-cart-subscription_error-error="Before you purchase, please use your email invite to verify your address so we can send order updates."
+            >
+              {{ 'tn1c765d0d' | t }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a
+    id="contact-btn"
+    href="{% if section.settings.button_link %}{{ section.settings.button_link }}{% else %}{{ pages["contact-us"].url }}{% endif %}"
+    class="button w-button"
+  >
+    {{- section.settings.button_text -}}
+  </a>
+</div>
+<div id="menu-icon" data-w-id="ace890ed-dd39-4876-a1ea-c43959dc2bd7" class="meun-icon">
+  <div class="icon-bar _1"></div>
+  <div class="icon-bar _2"></div>
+</div>
+
+<script>
+  var currentSection = document.currentScript.closest('.shopify-section');{% unless request.design_mode %}currentSection.id = "navbar";{% endunless %}currentSection.setAttribute("class","nav-container");
+</script>
+
+{% schema %}
+{
+  "name": "Navbar",
+  "tag": "div",
+  "class": "nav-container",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button - Text",
+      "default": "Contact Us"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "Menu"
+    },
+    {
+      "id": "droplink_link_7",
+      "label": "DropLink - Link 7",
+      "type": "url"
+    },
+    {
+      "id": "droplink_link",
+      "label": "DropLink - Link",
+      "type": "url"
+    },
+    {
+      "id": "droplink_link_6",
+      "label": "DropLink - Link 6",
+      "type": "url"
+    },
+    {
+      "id": "droplink_link_5",
+      "label": "DropLink - Link 5",
+      "type": "url"
+    },
+    {
+      "id": "droplink_link_4",
+      "label": "DropLink - Link 4",
+      "type": "url"
+    },
+    {
+      "id": "droplink_link_3",
+      "label": "DropLink - Link 3",
+      "type": "url"
+    },
+    {
+      "id": "droplink_link_2",
+      "label": "DropLink - Link 2",
+      "type": "url"
+    },
+    {
+      "type": "text",
+      "id": "text_block_text",
+      "label": "Text Block - Text",
+      "default": "Text Area"
+    },
+    {
+      "id": "menu_item_link_3",
+      "label": "Menu-Item - Link 3",
+      "type": "url"
+    },
+    {
+      "type": "text",
+      "id": "nav_link_3",
+      "label": "Nav Link 3",
+      "default": "Text Area"
+    },
+    {
+      "id": "menu_item_link_2",
+      "label": "Menu-Item - Link 2",
+      "type": "url"
+    },
+    {
+      "type": "text",
+      "id": "text_block_text_2",
+      "label": "Text Block - Text 2",
+      "default": "Text Area"
+    },
+    {
+      "id": "menu_item_link",
+      "label": "Menu-Item - Link",
+      "type": "url"
+    },
+    {
+      "type": "text",
+      "id": "shop_text",
+      "label": "Shop-Text",
+      "default": "Text Area"
+    },
+    {
+      "id": "shop_link_bg_link",
+      "label": "Shop-Link-BG-Link",
+      "type": "url"
+    },
+    {
+      "type": "checkbox",
+      "id": "lottie_animation_3_visibility",
+      "label": "Lottie Animation 3 - Visibility",
+      "default": true
+    },
+    {
+      "id": "logo",
+      "label": "Logo",
+      "type": "url"
+    },
+    {
+      "id": "button_link",
+      "label": "Button - Link",
+      "type": "url"
+    }
+  ]
+}
+{% endschema %}
