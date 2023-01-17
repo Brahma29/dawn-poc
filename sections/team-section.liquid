@@ -20,14 +20,14 @@
     >
       <div class="team-card-img">
         <img
-          src="{{ block.member_img | image_url }}"
+          src="{{ block.settings.member_img | image_url }}"
           loading="lazy"
           alt=""
           class="image-3"
         >
       </div>
       <div class="team-card-text">
-        <h3 class="team-member-name">{{ block.member_name }}</h3>
+        <h3 class="team-member-name">{{ block.settings.member_name }}</h3>
         {% comment %} <p class="team-member-msg">{{ 't372f1ac0' | t }}</p> {% endcomment %}
       </div>
     </div>
