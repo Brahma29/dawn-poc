@@ -29,6 +29,15 @@
   <a href="{{section.settings.btn_link_3}}">{{ section.settings.btn_text_3 }}</a>
 </div>
 
+{%- liquid
+  assign products_to_display = 4
+
+  if section.settings.collection.all_products_count > section.settings.products_to_show
+    assign products_to_display = section.settings.products_to_show
+    assign more_in_collection = true
+  endif
+  %}
+
 {% schema %}
   {
     "name": "Advantage Section",
