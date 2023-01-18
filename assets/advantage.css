@@ -9,3 +9,9 @@
   align-items:center;
   justify-content:center;
 }
+
+.card-img{
+  width: 200px;
+  height: 300px;
+  object-fit: contain;
+}
