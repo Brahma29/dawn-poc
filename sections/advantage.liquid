@@ -1,5 +1,7 @@
 <h1 class="heading">{{ section.settings.heading_text }}</h1>
 
+<div class="card-container">
+<div class="card">
 <div class="card-img">
   <img src="{{section.settings.advantage_card_image_image.src | img_url:'master'}}" />
 </div>
@@ -9,7 +11,9 @@
   <a href="{{section.settings.btn_link}}">{{ section.settings.btn_text }}</a>
 </div>
 
+  </div>
 
+<div class="card">
 <div class="card-img">
   <img src="{{section.settings.advantage_card_image_image_2.src | img_url:'master'}}" />
 </div>
@@ -18,8 +22,9 @@
   <h1>{{ section.settings.card_heading_text_2 }}</h1>
   <a href="{{section.settings.btn_link_2}}">{{ section.settings.btn_text_2 }}</a>
 </div>
+   </div>
 
-
+<div class="card">
 <div class="card-img">
   <img src="{{section.settings.advantage_card_image_image_3.src | img_url:'master'}}" />
 </div>
@@ -28,7 +33,9 @@
   <h1>{{ section.settings.card_heading_text_3 }}</h1>
   <a href="{{section.settings.btn_link_3}}">{{ section.settings.btn_text_3 }}</a>
 </div>
+  </div>
 
+  </div>
 
 
 {% schema %}
