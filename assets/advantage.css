@@ -1,7 +1,7 @@
 .card-container{
   display:flex;
   align-items:center;
-  jusify-content:center;
+  justify-content:center;
 }
 
 .card{
