@@ -50,6 +50,22 @@
     "advantage": {
       "type": "advantage",
       "settings": {
+        "heading_text": "The Chetna Advantage",
+        "advantage_card_image_image": "shopify:\/\/shop_images\/Group_477.png",
+        "btn_text": "See how",
+        "btn_link": "",
+        "card_heading_text": "Family Owned",
+        "advantage_card_image_image_2": "shopify:\/\/shop_images\/Group_477.png",
+        "btn_text_2": "Learn more",
+        "btn_link_2": "",
+        "card_heading_text_2": "Quality made",
+        "advantage_card_image_image_3": "shopify:\/\/shop_images\/Group_477.png",
+        "btn_text_3": "Buy Catalog",
+        "btn_link_3": "",
+        "card_heading_text_3": "Proudly made in India",
+        "cards_to_show": 4,
+        "image_ratio": "portrait",
+        "card_visibility": true
       }
     },
     "rich_text": {
