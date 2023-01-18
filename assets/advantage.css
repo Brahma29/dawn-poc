@@ -3,3 +3,8 @@
   align-items:center;
   jusify-content:center;
 }
+
+.card{
+  display:flex;
+  height:20vh;
+}
