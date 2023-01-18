@@ -1,144 +1,59 @@
 <h1 class="heading">{{ section.settings.heading_text }}</h1>
 
 <div class="card-container">
-<div class="card">
-<div class="card-img">
-  <img src="{{section.settings.advantage_card_image_image.src | img_url:'master'}}" />
-</div>
+  {% for block in section.blocks %}
+    <div class="card">
+      <div class="card-img">
+        <img src="{{block.settings.advantage_card_image}}" />
+      </div>
 
-<div class="card-text">
-  <h1>{{ section.settings.card_heading_text }}</h1>
-  <a href="{{section.settings.btn_link}}">{{ section.settings.btn_text }}</a>
-</div>
-
-  </div>
-
-<div class="card">
-<div class="card-img">
-  <img src="{{section.settings.advantage_card_image_image_2.src | img_url:'master'}}" />
-</div>
-
-<div class="card-text">
-  <h1>{{ section.settings.card_heading_text_2 }}</h1>
-  <a href="{{section.settings.btn_link_2}}">{{ section.settings.btn_text_2 }}</a>
-</div>
-   </div>
-
-<div class="card">
-<div class="card-img">
-  <img src="{{section.settings.advantage_card_image_image_3.src | img_url:'master'}}" />
-</div>
-
-<div class="card-text">
-  <h1>{{ section.settings.card_heading_text_3 }}</h1>
-  <a href="{{section.settings.btn_link_3}}">{{ section.settings.btn_text_3 }}</a>
-</div>
-  </div>
-
-  </div>
+      <div class="card-text">
+        <h1>{{ block.settings.card_heading_text }}</h1>
+        <a href="{{block.settings.btn_link}}">{{ block.settings.btn_text }}</a>
+      </div>
+    </div>
+  {% endfor %}
 
 
-{% schema %}
-  {
-    "name": "Advantage Section",
-    "tag": "div",
-    "class": "section",
-    "settings": [
-      {
-        "type": "text",
-        "id": "heading_text",
-        "label": "Heading - Text",
-        "default": "The Chetna Advantage"
-      },
-      {
-        "type": "image_picker",
-        "id": "advantage_card_image_image",
-        "label": "Advantage-Card-Image - Image 1"
-      },
-      {
-        "type": "text",
-        "id": "btn_text",
-        "label": "Button Text - 1",
-        "default": "See how"
-      },
-      {
-        "id": "btn_link",
-        "label": "Button Link - 1",
-        "type": "url"
-      }, {
-        "type": "text",
-        "id": "card_heading_text",
-        "label": "Card Heading Text - 1",
-        "default": "Family Owned"
-      }, {
-        "type": "image_picker",
-        "id": "advantage_card_image_image_2",
-        "label": "Advantage-Card-Image - Image 2"
-      }, {
-        "type": "text",
-        "id": "btn_text_2",
-        "label": "Button Text - 2",
-        "default": "Learn more"
-      }, {
-        "id": "btn_link_2",
-        "label": "Button Link - 2",
-        "type": "url"
-      }, {
-        "type": "text",
-        "id": "card_heading_text_2",
-        "label": "Card Heading Text - 2",
-        "default": "Quality made "
-      }, {
-        "type": "image_picker",
-        "id": "advantage_card_image_image_3",
-        "label": "Advantage-Card-Image - Image 3"
-      }, {
-        "type": "text",
-        "id": "btn_text_3",
-        "label": "Button Text - 3",
-        "default": "Buy Catalog"
-      }, {
-        "id": "btn_link_3",
-        "label": "Button Link - 3",
-        "type": "url"
-      }, {
-        "type": "text",
-        "id": "card_heading_text_3",
-        "label": "Card Heading Text - 3",
-        "default": "Proudly made in India"
-      }, {
-        "type": "range",
-        "id": "cards_to_show",
-        "min": 1,
-        "max": 10,
-        "default": 4,
-        "label":"Maximum Cards to show"
-      },
-      {
-      "type": "select",
-      "id": "image_ratio",
-      "options": [
+  {% schema %}
+    {
+      "name": "Advantage Section",
+      "tag": "div",
+      "class": "section",
+      "settings": [
         {
-          "value": "adapt",
-          "label": "adapt"
-        },
-        {
-          "value": "portrait",
-          "label": "portrait"
-        },
-        {
-          "value": "square",
-          "label": "square"
+          "type": "text",
+          "id": "heading_text",
+          "label": "Heading - Text",
+          "default": "The Chetna Advantage"
         }
       ],
-      "default": "adapt",
-      "label": "Image Ratio"
-    },{
-        "type": "checkbox",
-        "id": "card_visibility",
-        "label": "Card - Visibility",
-        "default": true
-      }
-    ]
-  }
-{% endschema %}
+      "blocks": [
+        {
+          "type": "slide",
+          "name": "Card",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "advantage_card_image",
+              "label": "Advantage Card Image"
+            }, {
+              "type": "text",
+              "id": "btn_text",
+              "label": "Button Text",
+              "default": "Type button text here"
+            }, {
+              "type": "url",
+              "id": "btn_link",
+              "label": "Button Link",
+              "default": "/collections"
+            }, {
+              "type": "text",
+              "id": "card_heading_text",
+              "label": "Card Heading Text"
+            }
+          ]
+        }
+      ]
+    }
+  {%endschema%}
