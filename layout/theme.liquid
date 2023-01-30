@@ -448,7 +448,9 @@
     </script>
 
     {{ shop.metafields.loox.global_html_head }}
-  </head>
+  
+	{{ shop.metafields.loox["global_html_head"] }}
+</head>
 
   <body class="gradient">
     <a class=" skip-to-content-link button visually-hidden" href="#MainContent">
@@ -514,5 +516,7 @@
     {%- endif -%}
 
     {{ shop.metafields.loox.global_html_body }}
-  </body>
+  
+	{{ shop.metafields.loox["global_html_body"] }}
+</body>
 </html>
