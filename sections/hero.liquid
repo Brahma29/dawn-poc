@@ -1,0 +1,146 @@
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+<style>
+  body {
+    display: inline-flex;
+  }
+  .basic div {
+    width: 760px;
+    height: 752.88px;
+  }
+  .slider_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bg-pewterBlue {
+    --tw-bg-opacity: 1;
+    background-color: rgb(146 176 178/var(--tw-bg-opacity));
+  }
+</style>
+
+<section>
+  <div class="relative flex flex-col-reverse items-center mx-auto homeContainer md:flex-row">
+    <img
+      src="https://ecommerce-react-sepia.vercel.app/static/media/starIcon.3d698b2a9287a794984a914a6c82a6ff.svg"
+      alt="starIcon"
+      class="absolute left-0 right-0 z-10 top-[338px] md:top-1/3 w-1/4 md:w-2/12 m-auto ">
+    <div class="flex flex-col items-start flex-1 px-8 py-8 text-left hero-text lg:px-24 md:py-0 md:w-1/2 lg:pr-24 md:pr-16 md:text-left">
+      <h1 class="my-4 text-3xl sm:text-4xl lg:text-7xl font-extrabold title-font text-lightBrown">{{ section.settings.heading_text }}</h1>
+      <p class="mb-4 leading-relaxed lg:text-xl 2xl:text-2xl md:text-sm text-lightBrown md:w-10/12">{{ section.settings.sub_heading_text }}</p>
+
+      <div class="flex justify-center w-full md:w-auto">
+        <a href="{{section.settings.button_link}}" class="mt-2 w-full py-5 text-sm font-bold tracking-widest text-white rounded-md btn bg-pewterBlue lg:px-24 px-11 md:w-auto hover:opacity-80">{{ section.settings.button_text }}</a>
+      </div>
+    </div>
+    <div class="flex-1 w-full md:w-1/2 basic">
+      {% for block in section.blocks %}
+        <div>
+          <img
+            class="slider_image"
+            src="{{block.settings.slider_image|image_url}}"
+            alt="slider_image" />
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+  $('.basic').slick({fade: false, cssEase: 'ease-in-out', arrows: true});
+</script>
+
+{% schema %}
+  {
+    "name": "Hero Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_text",
+        "label": "Heading Text",
+        "default": "Desire for blue ocean"
+      },
+      {
+        "type": "textarea",
+        "id": "sub_heading_text",
+        "label": "Sub Heading Text",
+        "default": "Good for your cause. Good for your supporters. Good for the planet. Boom Market makes fundraising more rewarding for everyone."
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "HOW IT WORKS"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link",
+        "default": "/collections"
+      }, {
+        "type": "header",
+        "content": "Image Slider"
+      }, {
+        "type": "select",
+        "id": "button_style",
+        "options": [
+          {
+            "value": "link",
+            "label": "Link"
+          }, {
+            "value": "solid_button",
+            "label": "Solid Button"
+          }, {
+            "value": "outline_button",
+            "label": "Outline Button"
+          }
+        ],
+        "default": "link",
+        "label": "Hero Section Button Style"
+      }, {
+        "type": "color",
+        "id": "border_color_outline_button",
+        "label": "Border color in Outline button",
+        "default": "#FFFFFF"
+      }, {
+        "type": "color",
+        "id": "background_color_solid_button",
+        "label": "Background color in solid button",
+        "default": "#FFFFFF"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Image",
+        "name": "Image Slider",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "slider_image",
+            "label": "Slider Image"
+          }, {
+            "type": "text",
+            "id": "slider_image_title",
+            "label": "Slider Image Title"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Slider",
+        "category": "Image"
+      }
+    ]
+  }
+{%endschema%}

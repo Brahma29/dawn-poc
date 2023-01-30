@@ -1,0 +1,67 @@
+<section class="flex justify-center bg-lightPink">
+  <div class="w-2/3 p-2 mx-2 my-2 lg:p-5 lg:mx-8 lg:my-8 lg:w-1/2">
+    <div class="flex py-2 my-3 justify-center gap-1">
+      {{ section.settings.rating }}
+      {% if section.settings.rating == "⭐⭐⭐⭐⭐" %}
+        <p class="mx-3 text-sm font-bold lg:text-xl">5.0</p>
+      {% elsif section.settings.rating == "⭐⭐⭐⭐" %}
+        <p class="mx-3 text-sm font-bold lg:text-xl">4.0</p>
+      {% elsif section.settings.rating == "⭐⭐⭐" %}
+        <p class="mx-3 text-sm font-bold lg:text-xl">3.0</p>
+      {% elsif section.settings.rating == "⭐⭐" %}
+        <p class="mx-3 text-sm font-bold lg:text-xl">2.0</p>
+      {% else %}
+        <p class="mx-3 text-sm font-bold lg:text-xl">1.0</p>
+      {% endif %}
+    </div>
+    <div class="py-1 my-1 text-center">
+      <p class="flex flex-wrap  text-sm md:text-lg lg:text-2xl antialiased font-extrabold text-center leading-4">{{ section.settings.testimonial_text }}</p>
+      <p class="my-4 py-2 text-sm">-{{ section.settings.user_name }}</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Testimonial Section",
+    "settings": [
+      {
+        "type": "select",
+        "id": "rating",
+        "label": "Rating",
+        "options": [
+          {
+            "label": "5 Star Rating",
+            "value": "⭐⭐⭐⭐⭐"
+          },
+          {
+            "label": "4 Star Rating",
+            "value": "⭐⭐⭐⭐"
+          },
+          {
+            "label": "3 Star Rating",
+            "value": "⭐⭐⭐"
+          },
+          {
+            "label": "2 Star Rating",
+            "value": "⭐⭐"
+          }, {
+            "label": "1 Star Rating",
+            "value": "⭐"
+          }
+        ]
+      }, {
+        "type": "text",
+        "id": "testimonial_text",
+        "label": "Testimonial Text",
+        "default": "I cant believe that this hasnt been done until now - high quality, great price and great designed clubs. This is all I need to have fun but also up my game if I want"
+      }, {
+        "type": "text",
+        "id": "user_name",
+        "label": "User's Name",
+        "default": "Andrea"
+      }
+
+    ]
+  }
+{%endschema%}

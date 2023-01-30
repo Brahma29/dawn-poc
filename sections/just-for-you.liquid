@@ -1,0 +1,76 @@
+<section class="bg-white">
+  <div class="container mx-auto py-8 px-4 md:px-4 md:py-14">
+    <div class="flex flex-col items-center justify-center style-title">
+      <h1 class="px-10 mt-8 text-3xl font-extrabold title=font sm:text-3xl lg:text-5xl text-lightBrown ">{{ section.settings.heading_text }}</h1>
+      <p class="w-auto mt-3 mb-8 leading-relaxed lg:text-xl 2xl:text-2xl text-lightBrown md:py-0">{{ section.settings.sub_heading_text }}</p>
+    </div>
+    <div class="flex flex-col justify-center styles md:flex-row">
+      {% for block in section.blocks %}
+        <div class="md:py-12 px-3 flex flex-wrap md:justify-none justify-center">
+          <div>
+              <div class="rounded-lg relative">
+                <img
+                class=" rounded w-full object-cover object-center mb-6"
+                src="{{block.settings.just_for_you_product_image|image_url}}"
+                alt="Just_for_you_product_image" />
+                <h1 class="font-extrabold text-3xl absolute bottom-24 left-8 text-white">{{ block.settings.just_for_you_card_heading }}</h1>
+                <div class="absolute bottom-8 left-8">
+                  <a
+                  class="btn px-10 text-xs tracking-widest font-semibold text-base-color uppercase rounded-md py-4 bg-white"
+                  href="{{block.settings.just_for_you_button_link}}">{{ block.settings.just_for_you_button_text }}</a>
+                </div>
+              </div>
+            </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Just For You Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_text",
+        "label": "Heading Text",
+        "default": "Just for you"
+      }, {
+        "type": "textarea",
+        "id": "sub_heading_text",
+        "label": "Sub-Heading Text",
+        "default": "How will you make your impact?"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Just For You Product Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "just_for_you_product_image",
+            "label": "Just For You Product Image"
+          }, {
+            "type": "text",
+            "id": "just_for_you_card_heading",
+            "label": "Just for You Card Heading",
+            "default": "Picnic Chill"
+          }, {
+            "type": "text",
+            "id": "just_for_you_button_text",
+            "label": "Button Text",
+            "default": "SHOP NOW"
+          }, {
+            "type": "url",
+            "id": "just_for_you_button_link",
+            "label": "Button Link",
+            "default": "/collections"
+          }
+        ]
+      }
+    ]
+  }
+{%endschema%}

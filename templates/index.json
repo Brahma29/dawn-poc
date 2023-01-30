@@ -1,5 +1,35 @@
 {
   "sections": {
+    "nav-bar": {
+      "type": "nav-bar"
+    },
+    "hero": {
+      "type": "hero"
+    },
+    "explore-collection": {
+      "type": "explore-collection"
+    },
+    "trendy-section": {
+      "type": "trendy-section"
+    },
+    "testimonial": {
+      "type": "testimonial"
+    },
+    "recommended": {
+      "type": "recommended"
+    },
+    "just-for-you": {
+      "type": "just-for-you"
+    },
+    "the-boom-life": {
+      "type": "the-boom-life"
+    },
+    "check-out-the-gram": {
+      "type": "check-out-the-gram"
+    },
+    "newsletter-section": {
+      "type": "newsletter-section"
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -228,15 +258,29 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "footer_menu": {
+      "type": "footer_menu"
     }
   },
   "order": [
+    "nav-bar",
+    "hero",
+    "explore-collection",
+    "trendy-section",
+    "testimonial",
+    "recommended",
+    "just-for-you",
+    "the-boom-life",
+    "check-out-the-gram",
+    "newsletter-section",
     "image_banner",
     "advantage",
     "rich_text",
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "footer_menu"
   ]
 }

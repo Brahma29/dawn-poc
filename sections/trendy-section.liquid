@@ -1,0 +1,60 @@
+<section class="bg-white">
+  <div class="container px-6 py-11 md:py-24 md:px-24 mx-auto">
+    <div class="flex justify-center w-full pb-4 md:pb-12 category-title">
+      <h1 class="mb-0 md:mb-4 text-3xl font-semibold title-font sm:text-3xl lg:text-5xl text-lightBrown">{{ section.settings.heading_text }}</h1>
+    </div>
+    <div class="flex flex-wrap">
+      {% for block in section.blocks %}
+        <div class="relative p-5 cursor-pointer lg:w-2/6 md:w-1/2">
+          <div class="flex flex-col items-center h-full text-center hover:shadow-2xl">
+            <img
+              alt="trendy_product_image"
+              class="flex-shrink-0 object-cover object-center w-full rounded-sm h-86"
+              src="{{block.settings.trendy_product_image|image_url}}">
+            <div class="absolute w-4/5 px-2 py-5 text-xs font-semibold tracking-widest rounded-sm category-name bg-isabelline bottom-10 md:py-4">
+              <a href="{{section.settings.button_link}}">{{ section.settings.button_text }}</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Trendy Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_text",
+        "label": "Heading Text",
+        "default": "Trendy Year-round Essentials for you"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Trendy Product Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "trendy_product_image",
+            "label": "Trendy Product Image"
+          }, {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Product genre"
+          }, {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link",
+            "default": "/collections"
+          }
+        ]
+      }
+    ]
+  }
+{%endschema%}

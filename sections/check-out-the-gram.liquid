@@ -1,0 +1,31 @@
+<section class="py-12 bg-white insta">\
+  <div class="container mx-auto pb-8">
+    <div
+  class="stories-title flex justify-center flex-col items-center">
+      <h1 class="title-font sm:text-3xl lg:text-5xl px-10 mt-8 text-3xl font-extrabold text-base-color">{{ section.settings.check-out-the-gram-heading }}</h1>
+      <p class="mb-8 leading-relaxed text-red-500 lg:text-xl 2xl:text-2xl w-auto mt-3 md:py-0"">{{ section.settings.check-out-the-gram-text }}</p>
+    </div>
+
+    {% comment  %} some logic that will render each and every insta image with a src which will be the replacement of map {% endcomment %}
+    
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Checkout The Gram Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "check-out-the-gram-heading",
+        "default": "Check out the gram!",
+        "label": "Check Out the Gram Heading"
+      }, {
+        "type": "text",
+        "id": "check-out-the-gram-text",
+        "label": "Check Out the gram text",
+        "default": "Don't miss our incredible stories."
+      }
+    ]
+  }
+{%endschema%}

@@ -1,0 +1,90 @@
+<style>
+  .bg-lightBrown {
+    --tw-bg-opacity: 1;
+    background-color: rgb(52 52 52/var(--tw-bg-opacity));
+  }
+
+  .explore-bg {
+    background: #f2f0ee;
+  }
+</style>
+
+<section class="explore">
+  <div class="flex flex-wrap justify-between w-full md:flex-nowrap grow">
+    <img src="{{section.settings.explore_collection_image|image_url}}"alt="explore_collection_image"class="w-full md:w-1/2 h-full" />
+
+    <div class="container flex items-center justify-center explore-bg">
+      <div class="w-full md:w-3/4 m-4 p-4 lg:m-4 lg:p-4 ">
+        <h1 class="w-3/4 text-lightBrown text-xl font-extrabold title-font md:text-3xl lg:text-4xl xl:text-5xl my-2">{{ section.settings.heading_text }}</h1>
+        <p class="my-2 text-lightBrown title-font text-sm md:text-m lg:text-xl">{{ section.settings.sub_heading_text }}</p>
+        <div class="flex flex-wrap lg:my-4 my-2 md:flex-nowrap">
+          <a href="{{section.settings.button_link}}" class="w-full py-5 text-sm font-bold tracking-widest text-white rounded-md btn px-11 md:w-auto bg-lightBrown hover:opacity-80">{{ section.settings.button_text }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Explore Collection",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "explore_collection_image",
+        "label": "Explore Collection Image"
+      },
+      {
+        "type": "text",
+        "id": "heading_text",
+        "label": "Heading Text",
+        "default": "Get your Grey Minimal Hoodies"
+      },
+      {
+        "type": "textarea",
+        "id": "sub_heading_text",
+        "label": "Sub Heading Text",
+        "default": "Get FLAT INR 299 OFF on orders above INR 899 USE CODE : GO PRO"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "EXPLORE COLLECTION"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link",
+        "default": "/collections"
+      }, {
+        "type": "select",
+        "id": "button_style",
+        "options": [
+          {
+            "value": "link",
+            "label": "Link"
+          }, {
+            "value": "solid_button",
+            "label": "Solid Button"
+          }, {
+            "value": "outline_button",
+            "label": "Outline Button"
+          }
+        ],
+        "default": "link",
+        "label": "Explore Collection Button Style"
+      }, {
+        "type": "color",
+        "id": "border_color_outline_button",
+        "label": "Border color in Outline button",
+        "default": "#FFFFFF"
+      }, {
+        "type": "color",
+        "id": "background_color_solid_button",
+        "label": "Background color in solid button",
+        "default": "#FFFFFF"
+      }
+    ]
+  }
+{%endschema%}
