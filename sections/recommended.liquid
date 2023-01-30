@@ -1,0 +1,154 @@
+<section>
+  <div class="container px-6 mx-auto md:px-16 py-14">
+    <div class="flex justify-center category-title">
+      <h1 class="px-0 md:px-5 py-2 font-semibold title-font text-3xl sm:text-3xl lg:text-5xl text-lightBrown">{{ section.settings.heading_text }}</h1>
+    </div>
+    <div class="flex justify-center w-full text-center">
+      <p class="w-full md:w-3/5 lg:w-2/5 py-2 px-0 md:px-2 leading-relaxed text-sm md:text-lg lg:text-xl text-lightBrown">{{ section.settings.sub_heading_text }}</p>
+    </div>
+  </div>
+  <div class="flex flex-wrap justify-center w-full px-4 mb-6">
+    {% for block in section.blocks %}
+      {% if block.type == "text" %}
+        <a href="{{block.settings.button_url}}" class="px-12 py-2 mx-1 my-2 text-sm font-medium whitespace-nowrap bg-white rounded-full md:w-auto focus:bg-paleOrange">{{ blocks.settings.button_text }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+
+
+  <div class="pb-8 md:pb-14">
+    <div class="relative container mx-auto lg:px-24">
+      <div class="left-btn absolute cursor-pointer left-0 lg:left-0 top-1/4 p-2 lg:p-5">
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="h-24 w-10 false" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+          <path d="M217.9 256L345 129c9.4-9.4 9.4-24.6 0-33.9-9.4-9.4-24.6-9.3-34 0L167 239c-9.1 9.1-9.3 23.7-.7 33.1L310.9 417c4.7 4.7 10.9 7 17 7s12.3-2.3 17-7c9.4-9.4 9.4-24.6 0-33.9L217.9 256z"></path>
+        </svg>
+      </div>
+      <div class="lg:px-0 px-16">
+        <div class="slick-slider slick-initialized">
+          <div class="slick-list">
+            <div class="slick-track" style="width: 4430px; opacity:1; transform:translate3d(-886px,0px,0px);">
+
+              {% comment  %} meaning of ::before  {% endcomment %}
+
+              {% for block in section.blocks %}
+                {% if block.type == "slide" %}
+                <div data-index = "HAS TO BE RENDERED DYNAMICALLY STARTING FROM 0" class="slick-slide" tabindex="-1" aria-hidden="true" style="outline: none; width:443px;">
+                  <div>
+                  <div class="px-1 py-5 mx-auto">
+                    <div class="w-full h-full min-h-fit p-3 mr-0">
+                      <img
+                      src="{{block.settings.product_card_image|image_url}}"
+                      alt="product_card_image"
+                      class="block object-cover object-center w-full h-full" />
+                    <div class="mt-4 mb-2 text-left">
+                      <h3 class="text-xs h-8 lg:h-5 title-font opacity-60">{{ block.settings.category }}</h3>
+                      <h2 class="text-sm h-10 lg:h-6 font-bold text-gray-900 title-font">{{ block.settings.product_name }}</h2>
+                      <span class="mt-1 mr-1 font-bold text-redOrange">{{ block.settings.discounted_price }}</span>
+                      <span class="mt-1 text-xs opacity-60">{{ block.settings.original_price }}</span>
+                    </div>
+                    <hr class="text-gray-700" />
+                  <div class="flex max-w-full mt-4">
+                    <a href="{{block.settings.button_url}}" class="w-4/5 lg:py-4 py-2 lg:mr-4 mr-2 lg:text-sm text-xs font-bold tracking-widest text-center text-white rounded  whitespace-nowrap bg-lightBrown hover:opacity-80">{{ block.settings.button_text }}</a>
+                    <input
+                    id="heart-shaped"
+                    type="checkbox"
+                    class="w-1/5 lg:p-3 p-1 ml-auto text-gray-500 border-2 border-gray-300 border-solid rounded cursor-pointer btn h-14 max-w-max hover:border-red-700 hover:text-red-700" />
+                  </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+        {% endif %}
+      {% endfor %}
+
+      {% comment  %} meaning of ::after  {% endcomment %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-btn absolute lg:right-0 right-0 top-1/4 cursor-pointer p-2 lg:p-5">
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="h-24 w-10" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+          <path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Recommended Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_text",
+        "label": "Heading Text",
+        "default": "Recommended for you"
+      }, {
+        "type": "textarea",
+        "id": "sub_heading_text",
+        "label": "Sub Heading Text",
+        "default": "From planet-friendly products like reusable bags, How will you make your impact?"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Buttons",
+        "settings": [
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+          }, {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button Url"
+          }
+        ]
+      }, {
+        "type": "slide",
+        "name": "Product Cards",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "product_card_image",
+            "label": "Product Card Image"
+          },
+          {
+            "type": "text",
+            "id": "category",
+            "label": "Brand Name"
+          },
+          {
+            "type": "text",
+            "id": "product_name",
+            "label": "Product Name"
+          },
+          {
+            "type": "number",
+            "id": "discounted_price",
+            "label": "Discounted Price"
+          }, {
+            "type": "number",
+            "id": "original_price",
+            "label": "Original Price"
+          }, {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "+ ADD TO BAG"
+          }, {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button Url",
+            "default": "/collections"
+          }
+        ]
+      }
+    ]
+  }
+{%endschema%}

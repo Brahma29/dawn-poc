@@ -1,0 +1,71 @@
+<section class="newsletter bg-lightBrown">
+  <div class="flex flex-wrap justify-between w-full md:flex-nowrap grow">
+    <img
+      src="{{section.settings.newsletter_image|image_url}}"
+      alt="newsletter_image"
+      class=" w-full md:w-5/12 h-full " />
+    <div class="container flex items-center justify-center ">
+      <div class=" w-full md:w-3/4 text-white lg:m-4 lg:p-4 m-2 p-4 ">
+        <h1 class="w-3/4 text-xl font-extrabold title-font md:text-3xl lg:text-4xl xl:text-5xl my-2">{{ section.settings.newsletter_heading }}</h1>
+        <p class="my-2 title-font sm:text-sm lg:text-xl text-l">{{ section.settings.newsletter_text }}</p>
+        <div class="flex flex-wrap lg:my-4 my-2 md:flex-nowrap">
+          <input
+            type="email"
+            placeholder="{{section.settings.newsletter_input_placeholder}}"
+            class="w-full lg:px-5 lg:py-5 px-3 py-3 my-2 mr-5 text-white bg-lightGrey rounded">
+          <a
+          href="{{section.settings.newsletter_button_link}}" 
+          class="w-auto lg:px-5 lg:py-5 px-3 py-3 my-2 text-sm font-bold tracking-widest text-black bg-white rounded-md btn hover:opacity-80" id="newsletter_button">{{ section.settings.newsletter_button_text }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %}
+<script>
+
+const newsletter-button = document.getElementById('newsletter_button');
+newsletter-button.onclick()
+
+</script>
+{% endcomment %}{% schema %}
+  {
+    "name": "The Newsletter Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "newsletter_image",
+        "label": "Newsletter Image"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_heading",
+        "label": "Newsletter Heading",
+        "default": "Subscribe to our Weekly Newsletter"
+      },
+      {
+        "type": "textarea",
+        "id": "newsletter_text",
+        "label": "Newsletter Text",
+        "default": "Don't miss out on our incredible stories"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_input_placeholder",
+        "label": "Newsletter Input Placeholder",
+        "default": "hello@brandimpetus.com"
+      }, {
+        "type": "text",
+        "id": "newsletter_button_text",
+        "label": "Newsletter Button Text",
+        "default": "SUBSCRIBE"
+      }, {
+        "type": "url",
+        "id": "newsletter_button_link",
+        "label": "Newsletter Button Link",
+        "default": "/collections"
+      }
+    ]
+  }
+{%endschema%}

@@ -1,33 +1,61 @@
-<h1 class="heading">{{ section.settings.heading_text }}</h1>
-
-<div class="card-img">
-  <img src="{{section.settings.advantage_card_image_image.src | img_url:'master'}}" />
+{{ 'advantage.css' | asset_url | stylesheet_tag }}
+{{ 'base.css' | asset_url | stylesheet_tag }}
+<div
+  class="advantage-section ">
+  <h1
+    class="heading">{{ section.settings.heading_text }}</h1>
+  <div
+    class="card-container d-flex-start">
+    {% for block in section.blocks limit: section.settings.maximum_number_of_cards %}
+      <div
+        class="
+        {% if section.settings.maximum_number_of_cards <= 3 %}
+          max-cards-3
+        {% elsif section.settings.maximum_number_of_cards == 4 %}
+          max-cards-4
+        {% else %}
+          max-cards-5
+        {% endif %}
+        advantage-card d-flex-center">
+        <div
+          class="card-image-container">
+          <img
+            class='
+          {% if section.settings.image_ratio == 'portrait' %}
+            portrait
+          {% elsif section.settings.image_ratio == 'square' %}
+            square
+          {% else %}
+            adapt
+          {% endif %}'
+          src="{{block.settings.advantage_card_image|image_url}}">
+        </div>
+        <div
+          class="card-text">
+          <h1>{{ block.settings.card_heading_text }}</h1>
+          <a
+            class='
+            {% if section.settings.button_style == 'solid_button' %}
+              solid_button"
+            {% elsif section.settings.button_style == 'outline_button' %}
+              outline_button"
+            {% else %}
+              link_button
+            {% endif %}
+            advantage-card-button'
+            style='{% if section.settings.button_style == 'solid_button' %}
+              background-color: {{ section.settings.background_color_solid_button }}
+            {% elsif section.settings.button_style == 'outline_button' %}
+              border: 1px solid {{ section.settings.border_color_outline_button }}
+            {% endif %}'
+            href="{{block.settings.btn_link}}">{{ block.settings.btn_text }}</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 
-<div class="card-text">
-  <h1>{{ section.settings.card_heading_text }}</h1>
-  <a href="{{section.settings.btn_link}}">{{ section.settings.btn_text }}</a>
-</div>
 
-
-<div class="card-img">
-  <img src="{{section.settings.advantage_card_image_image_2.src | img_url:'master'}}" />
-</div>
-
-<div class="card-text">
-  <h1>{{ section.settings.card_heading_text_2 }}</h1>
-  <a href="{{section.settings.btn_link_2}}">{{ section.settings.btn_text_2 }}</a>
-</div>
-
-
-<div class="card-img">
-  <img src="{{section.settings.advantage_card_image_image_3.src | img_url:'master'}}" />
-</div>
-
-<div class="card-text">
-  <h1>{{ section.settings.card_heading_text_3 }}</h1>
-  <a href="{{section.settings.btn_link_3}}">{{ section.settings.btn_text_3 }}</a>
-</div>
 
 {% schema %}
   {
@@ -42,67 +70,86 @@
         "default": "The Chetna Advantage"
       },
       {
-        "type": "image_picker",
-        "id": "advantage_card_image_image",
-        "label": "Advantage-Card-Image - Image 1"
+        "type": "range",
+        "id": "maximum_number_of_cards",
+        "min": 1,
+        "max": 5,
+        "default": 3,
+        "label": "Maximum Number of Cards"
       },
       {
-        "type": "text",
-        "id": "btn_text",
-        "label": "Button Text - 1",
-        "default": "See how"
+        "type": "select",
+        "id": "image_ratio",
+        "options": [
+          {
+            "value": "adapt",
+            "label": "adapt"
+          }, {
+            "value": "portrait",
+            "label": "portrait"
+          }, {
+            "value": "square",
+            "label": "square"
+          }
+        ],
+        "default": "adapt",
+        "label": "Image Ratio"
       },
       {
-        "id": "btn_link",
-        "label": "Button Link - 1",
-        "type": "url"
+        "type": "select",
+        "id": "button_style",
+        "options": [
+          {
+            "value": "link",
+            "label": "Link"
+          }, {
+            "value": "solid_button",
+            "label": "Solid Button"
+          }, {
+            "value": "outline_button",
+            "label": "Outline Button"
+          }
+        ],
+        "default": "link",
+        "label": "Card Button Style"
       }, {
-        "type": "text",
-        "id": "card_heading_text",
-        "label": "Card Heading Text - 1",
-        "default": "Family Owned"
+        "type": "color",
+        "id": "border_color_outline_button",
+        "label": "Border color in Outline button",
+        "default": "#FFFFFF"
       }, {
-        "type": "image_picker",
-        "id": "advantage_card_image_image_2",
-        "label": "Advantage-Card-Image - Image 2"
-      }, {
-        "type": "text",
-        "id": "btn_text_2",
-        "label": "Button Text - 2",
-        "default": "Learn more"
-      }, {
-        "id": "btn_link_2",
-        "label": "Button Link - 2",
-        "type": "url"
-      }, {
-        "type": "text",
-        "id": "card_heading_text_2",
-        "label": "Card Heading Text - 2",
-        "default": "Quality made "
-      }, {
-        "type": "image_picker",
-        "id": "advantage_card_image_image_3",
-        "label": "Advantage-Card-Image - Image 3"
-      }, {
-        "type": "text",
-        "id": "btn_text_3",
-        "label": "Button Text - 3",
-        "default": "Buy Catalog"
-      }, {
-        "id": "btn_link_3",
-        "label": "Button Link - 3",
-        "type": "url"
-      }, {
-        "type": "text",
-        "id": "card_heading_text_3",
-        "label": "Card Heading Text - 3",
-        "default": "Family owned"
-      }, {
-        "type": "checkbox",
-        "id": "card_visibility",
-        "label": "Card - Visibility",
-        "default": true
+        "type": "color",
+        "id": "background_color_solid_button",
+        "label": "Background color in solid button",
+        "default": "#FFFFFF"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "advantage_card_image",
+            "label": "Advantage Card Image"
+          }, {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button Text",
+            "default": "Type button text here"
+          }, {
+            "type": "url",
+            "id": "btn_link",
+            "label": "Button Link",
+            "default": "/collections"
+          }, {
+            "type": "text",
+            "id": "card_heading_text",
+            "label": "Card Heading Text"
+          }
+        ]
       }
     ]
   }
-{% endschema %}
+{%endschema%}
